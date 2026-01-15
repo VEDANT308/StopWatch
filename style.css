@@ -1,0 +1,47 @@
+ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Inter:wght@400;700&display=swap');
+
+ body {
+     font-family: 'Inter', sans-serif;
+     background: radial-gradient(circle at center, #1e1b4b, #020617);
+     min-height: 100vh;
+     color: white;
+ }
+
+ .mono {
+     font-family: 'JetBrains Mono', monospace;
+     font-variant-numeric: tabular-nums;
+ }
+
+ /* Pretty Glass Effect */
+ .glass {
+     background: rgba(255, 255, 255, 0.03);
+     backdrop-filter: blur(15px);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+ }
+
+ .lap-anim {
+     animation: in 0.3s ease-out;
+ }
+
+ @keyframes in {
+     from {
+         opacity: 0;
+         transform: scale(0.95);
+     }
+
+     to {
+         opacity: 1;
+         transform: scale(1);
+     }
+ }
+
+ /* Custom Scrollbar */
+ #list::-webkit-scrollbar {
+     width: 4px;
+ }
+
+ #list::-webkit-scrollbar-thumb {
+     background: rgba(255, 255, 255, 0.2);
+     border-radius: 10px;
+ }

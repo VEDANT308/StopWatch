@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Glass Stopwatch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="flex items-center justify-center p-6">
+
+    <div class="max-w-md w-full">
+        <!-- Main Card -->
+        <div class="glass rounded-[3rem] p-10 text-center relative overflow-hidden">
+            <!-- Progress Top Bar -->
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-white/5">
+                <div id="bar"
+                    class="h-full bg-gradient-to-r from-fuchsia-500 to-purple-500 w-0 transition-all duration-100 shadow-[0_0_15px_rgba(192,38,211,0.5)]">
+                </div>
+            </div>
+
+            <h1 class="text-fuchsia-400 font-bold tracking-[0.3em] uppercase text-[10px] mb-8">Time Engine</h1>
+
+            <!-- Timer Display -->
+            <div class="mono text-6xl font-bold text-white mb-10 tracking-tighter" id="disp">
+                00:00<span class="text-3xl text-fuchsia-500/80">.00</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <button id="sBtn"
+                    class="flex items-center justify-center gap-3 bg-white text-black py-4 rounded-2xl font-black hover:bg-fuchsia-50 transition active:scale-95 shadow-xl">
+                    <i class="fas fa-play text-xs" id="sIco"></i>
+                    <span id="sTxt">START</span>
+                </button>
+                <button id="lBtn"
+                    class="glass text-white py-4 rounded-2xl font-bold hover:bg-white/10 transition active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+                    disabled>
+                    <i class="fas fa-bolt mr-2 text-fuchsia-400"></i>LAP
+                </button>
+            </div>
+
+            <button id="rBtn"
+                class="text-slate-500 hover:text-white transition-colors text-xs font-bold tracking-widest uppercase">
+                <i class="fas fa-rotate-left mr-1"></i> Full Reset
+            </button>
+        </div>
+
+        <!-- Laps List -->
+        <div id="list" class="mt-8 space-y-3 max-h-64 overflow-y-auto hidden">
+            <!-- Laps injected here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
